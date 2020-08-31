@@ -7,7 +7,6 @@ import com.ebbers.challenge.videoserver.rest.command.CreateRoomCommand
 import com.ebbers.challenge.videoserver.rest.dto.RoomDTO
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
-import io.swagger.v3.oas.annotations.tags.Tags
 import org.slf4j.LoggerFactory
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.GetMapping

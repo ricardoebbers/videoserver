@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import java.util.logging.Logger
 import javax.servlet.http.HttpServletRequest
 import javax.validation.Valid
 
-@Tag(name ="Authentication API")
+@Tag(name = "Authentication API")
 @RestController
 @RequestMapping("/auth")
 class AuthController(

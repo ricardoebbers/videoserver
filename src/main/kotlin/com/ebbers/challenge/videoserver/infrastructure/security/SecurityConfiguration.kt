@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.crypto.password.PasswordEncoder
+import org.springframework.security.web.util.matcher.RequestMatcher
 
 @Configuration
 class SecurityConfiguration(
@@ -36,5 +37,9 @@ class SecurityConfiguration(
                 .formLogin().disable()
                 .logout().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .requiresChannel()
+                .requestMatchers(RequestMatcher { r -> r.getHeader("X-Forwarded-Proto") != null })
+                .requiresSecure()
     }
 }
